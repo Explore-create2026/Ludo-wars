@@ -396,70 +396,95 @@ export const GameArena: React.FC<GameArenaProps> = ({
   if (!activePlayer) return null;
 
   return (
-    <div className="w-full max-w-7xl mx-auto py-6 px-4 flex flex-col gap-6">
+    <div className="w-full max-w-7xl mx-auto py-4 sm:py-6 px-2 sm:px-4 flex flex-col gap-5 sm:gap-6">
       {/* Top Status & Controls Header */}
-      <div className="flex flex-wrap items-center justify-between gap-4 glass-panel p-4 rounded-2xl border border-slate-800">
-        <div className="flex items-center gap-3">
+      <div className="glass-panel p-3 sm:p-4 rounded-2xl border border-slate-800 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+        {/* Row 1: Brand & Status on left, Quick Utilities (Sound + Restart) on right for mobile */}
+        <div className="flex items-center justify-between w-full sm:w-auto gap-2">
           <div className="flex items-center gap-2">
-            <span className="text-2xl">👑</span>
-            <span className="font-extrabold text-white text-lg tracking-tight">
-              LUDO <span className="text-[#F5C76B]">WARS</span>
+            <span className="text-xl sm:text-2xl">👑</span>
+            <span className="font-extrabold text-white text-base sm:text-lg tracking-tight">
+              LUDO <span className="text-[#F5C76B]">WARSS</span>
+            </span>
+            <span className="text-[10px] sm:text-xs font-semibold px-2 py-0.5 rounded-full bg-purple-500/20 text-purple-300 border border-purple-500/30 uppercase tracking-wide">
+              {mode === 'vs_bot' ? 'VS BOT' : mode === 'local' ? 'PASS & PLAY' : 'ONLINE'}
             </span>
           </div>
 
-          <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-purple-500/20 text-purple-300 border border-purple-500/30 uppercase tracking-wide">
-            {mode.replace('_', ' ')}
-          </span>
+          {/* Mobile Utilities (Sound + Restart) placed in top row so they never get pushed outside */}
+          <div className="flex items-center gap-1.5 sm:hidden">
+            <button
+              onClick={handleToggleSound}
+              aria-label="Toggle Sound"
+              className="p-1.5 rounded-lg bg-slate-800/90 hover:bg-slate-700 text-slate-300 transition shrink-0"
+            >
+              {isMuted ? <VolumeX className="w-4 h-4 text-red-400" /> : <Volume2 className="w-4 h-4 text-emerald-400" />}
+            </button>
+            <button
+              onClick={() => initGame(mode)}
+              title="Restart Match"
+              className="p-1.5 rounded-lg bg-slate-800/90 hover:bg-slate-700 text-slate-300 transition shrink-0"
+            >
+              <RotateCcw className="w-4 h-4" />
+            </button>
+          </div>
         </div>
 
-        {/* Game Mode Buttons */}
-        <div className="flex items-center gap-2">
-          <button
-            onClick={() => setMode('vs_bot')}
-            className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-bold transition ${
-              mode === 'vs_bot'
-                ? 'bg-purple-600 text-white shadow-md'
-                : 'text-slate-400 hover:text-white bg-slate-900/60'
-            }`}
-          >
-            <Bot className="w-3.5 h-3.5" /> <span>vs Computer</span>
-          </button>
+        {/* Mode Selectors + Desktop Utilities */}
+        <div className="flex items-center justify-between sm:justify-end gap-2 w-full sm:w-auto">
+          {/* Mode Tabs Grid on Mobile, Flex on Desktop */}
+          <div className="grid grid-cols-3 sm:flex items-center gap-1.5 w-full sm:w-auto">
+            <button
+              onClick={() => setMode('vs_bot')}
+              className={`flex items-center justify-center gap-1 sm:gap-1.5 px-2 sm:px-3 py-1.5 rounded-lg text-[11px] sm:text-xs font-bold transition ${
+                mode === 'vs_bot'
+                  ? 'bg-purple-600 text-white shadow-md'
+                  : 'text-slate-400 hover:text-white bg-slate-900/60'
+              }`}
+            >
+              <Bot className="w-3.5 h-3.5 shrink-0" />
+              <span className="truncate">vs Computer</span>
+            </button>
 
-          <button
-            onClick={() => setMode('local')}
-            className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-bold transition ${
-              mode === 'local'
-                ? 'bg-purple-600 text-white shadow-md'
-                : 'text-slate-400 hover:text-white bg-slate-900/60'
-            }`}
-          >
-            <Users className="w-3.5 h-3.5" /> <span>Pass & Play</span>
-          </button>
+            <button
+              onClick={() => setMode('local')}
+              className={`flex items-center justify-center gap-1 sm:gap-1.5 px-2 sm:px-3 py-1.5 rounded-lg text-[11px] sm:text-xs font-bold transition ${
+                mode === 'local'
+                  ? 'bg-purple-600 text-white shadow-md'
+                  : 'text-slate-400 hover:text-white bg-slate-900/60'
+              }`}
+            >
+              <Users className="w-3.5 h-3.5 shrink-0" />
+              <span className="truncate">Pass & Play</span>
+            </button>
 
-          <button
-            onClick={onOpenOnlineLobby}
-            className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-bold text-amber-300 hover:text-amber-200 bg-amber-500/10 border border-amber-500/30 transition"
-          >
-            <Globe className="w-3.5 h-3.5" /> <span>Online Room</span>
-          </button>
+            <button
+              onClick={onOpenOnlineLobby}
+              className="flex items-center justify-center gap-1 sm:gap-1.5 px-2 sm:px-3 py-1.5 rounded-lg text-[11px] sm:text-xs font-bold text-amber-300 hover:text-amber-200 bg-amber-500/10 border border-amber-500/30 transition"
+            >
+              <Globe className="w-3.5 h-3.5 shrink-0" />
+              <span className="truncate">Online Room</span>
+            </button>
+          </div>
 
-          {/* Sound Mute Toggle */}
-          <button
-            onClick={handleToggleSound}
-            aria-label="Toggle Sound"
-            className="p-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 transition"
-          >
-            {isMuted ? <VolumeX className="w-4 h-4 text-red-400" /> : <Volume2 className="w-4 h-4 text-emerald-400" />}
-          </button>
+          {/* Desktop Utilities (Sound + Restart) */}
+          <div className="hidden sm:flex items-center gap-2 shrink-0">
+            <button
+              onClick={handleToggleSound}
+              aria-label="Toggle Sound"
+              className="p-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 transition"
+            >
+              {isMuted ? <VolumeX className="w-4 h-4 text-red-400" /> : <Volume2 className="w-4 h-4 text-emerald-400" />}
+            </button>
 
-          {/* Restart */}
-          <button
-            onClick={() => initGame(mode)}
-            title="Restart Match"
-            className="p-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 transition"
-          >
-            <RotateCcw className="w-4 h-4" />
-          </button>
+            <button
+              onClick={() => initGame(mode)}
+              title="Restart Match"
+              className="p-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 transition"
+            >
+              <RotateCcw className="w-4 h-4" />
+            </button>
+          </div>
         </div>
       </div>
 
