@@ -6,6 +6,7 @@
 import React, { useState } from 'react';
 import { statsService } from '../services/statsService';
 import { AdsterraAdBanner } from './AdsterraAdBanner';
+import { GoogleAdSenseBanner } from './GoogleAdSenseBanner';
 import { Trophy, Medal, Crown, Flame, Search } from 'lucide-react';
 
 export const LeaderboardView: React.FC = () => {
@@ -168,6 +169,11 @@ export const LeaderboardView: React.FC = () => {
       {/* Adsterra Leaderboard Banner */}
       <div className="mt-8 flex justify-center">
         <AdsterraAdBanner slotId="adst_mid_300x250" fallbackFormat="300x250" />
+      </div>
+
+      {/* Google AdSense Recommended / Auto-Relaxed Unit */}
+      <div className="mt-6">
+        <GoogleAdSenseBanner slot="9192070017" client="ca-pub-8772765378084223" format="autorelaxed" />
       </div>
     </div>
   );

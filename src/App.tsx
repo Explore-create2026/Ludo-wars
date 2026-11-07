@@ -17,6 +17,7 @@ import { RulesGuideModal } from './components/RulesGuideModal';
 import { LegalModal, LegalDocType } from './components/LegalModal';
 import { PhpDeployModal } from './components/PhpDeployModal';
 import { AdsterraAdBanner } from './components/AdsterraAdBanner';
+import { GoogleAdSenseBanner } from './components/GoogleAdSenseBanner';
 import { adsterraService } from './services/adsterraService';
 import { downloadPhpPackage } from './services/phpPackageGenerator';
 import {
@@ -420,6 +421,11 @@ export default function App() {
             <div className="max-w-4xl mx-auto px-4 flex flex-col items-center gap-4">
               <AdsterraAdBanner slotId="adst_mid_300x250" fallbackFormat="300x250" />
               <AdsterraAdBanner slotId="adst_native_banner" fallbackFormat="native" />
+            </div>
+
+            {/* Google AdSense Recommended / Auto-Relaxed Unit */}
+            <div className="max-w-7xl mx-auto px-4">
+              <GoogleAdSenseBanner slot="9192070017" client="ca-pub-8772765378084223" format="autorelaxed" />
             </div>
 
             {/* FAQ SECTION */}

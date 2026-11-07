@@ -117,6 +117,18 @@ if (str_starts_with($uri, 'api/')) {
             <p style="font-size:14px; color:#94A3B8;">Security Lock: <strong>Active (installed.lock)</strong></p>
             <a href="/admin" style="display:inline-block; margin-top:10px; background:#1E294B; color:#F8FAFC; padding:10px 20px; border-radius:8px; text-decoration:none; font-size:13px; font-weight:600;">Access Admin CMS</a>
         </div>
+
+        <!-- Google AdSense Auto-Relaxed Unit -->
+        <div style="max-width:600px; margin:20px auto;">
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-format="autorelaxed"
+                 data-ad-client="ca-pub-8772765378084223"
+                 data-ad-slot="9192070017"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
     </main>
     <footer>
         &copy; <?php echo date('Y'); ?> Ludo Warss. All rights reserved. Free-to-play board game platform.

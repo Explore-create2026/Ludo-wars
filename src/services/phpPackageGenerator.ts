@@ -205,6 +205,18 @@ if (str_starts_with($uri, 'api/')) {
                     </div>
                 </div>
             </div>
+
+            <!-- Google AdSense Auto-Relaxed Unit -->
+            <div style="max-width:1100px; margin:30px auto 10px; padding:0 15px;">
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-format="autorelaxed"
+                     data-ad-client="ca-pub-8772765378084223"
+                     data-ad-slot="9192070017"></ins>
+                <script>
+                     (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </div>
         </main>
 
         <footer class="border-t border-slate-800/80 bg-[#0B1020] py-8 text-center text-xs text-slate-500">
