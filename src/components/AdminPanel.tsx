@@ -481,6 +481,29 @@ export const AdminPanel: React.FC<AdminPanelProps> = ({ onBackToGame }) => {
                 </div>
               </div>
 
+              {/* Google AdSense Head Tag Status */}
+              <div className="p-4 rounded-xl bg-gradient-to-r from-blue-950/40 to-slate-900 border border-blue-500/30 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+                <div className="flex items-center gap-3">
+                  <div className="w-9 h-9 rounded-lg bg-blue-500/20 border border-blue-500/40 flex items-center justify-center text-lg">
+                    🌐
+                  </div>
+                  <div>
+                    <div className="flex items-center gap-2">
+                      <h4 className="font-bold text-sm text-white">Google AdSense Publisher Script</h4>
+                      <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-500/20 text-emerald-300 border border-emerald-500/40">
+                        ACTIVE IN &lt;HEAD&gt;
+                      </span>
+                    </div>
+                    <p className="text-xs text-slate-400 font-mono mt-0.5">
+                      Client ID: ca-pub-8772765378084223
+                    </p>
+                  </div>
+                </div>
+                <div className="text-[11px] text-slate-400 bg-slate-950/60 px-3 py-1.5 rounded-lg border border-slate-800">
+                  Site Verification & Auto-Ads Enabled
+                </div>
+              </div>
+
               {/* Format Slot Cards */}
               <div className="space-y-6">
                 {adsterraSlots.map((slot) => (

@@ -1,6 +1,8 @@
 {
-  "name": "Ludo Wars",
+  "name": "Ludo Warss",
   "description": "Premium online and offline Ludo gaming platform with single-player AI bots, local pass & play, online multiplayer rooms, and deployable PHP 8.2+ MySQL hosting package.",
   "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
 }

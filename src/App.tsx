@@ -17,6 +17,7 @@ import { RulesGuideModal } from './components/RulesGuideModal';
 import { LegalModal, LegalDocType } from './components/LegalModal';
 import { PhpDeployModal } from './components/PhpDeployModal';
 import { AdsterraAdBanner } from './components/AdsterraAdBanner';
+import { adsterraService } from './services/adsterraService';
 import { downloadPhpPackage } from './services/phpPackageGenerator';
 import {
   Trophy,
@@ -134,7 +135,18 @@ export default function App() {
           </nav>
 
           {/* Zone 3: Primary Action & Profile */}
-          <div className="flex items-center gap-3 shrink-0">
+          <div className="flex items-center gap-2 sm:gap-3 shrink-0">
+            {/* Adsterra Smartlink CTA */}
+            <a
+              href={adsterraService.getDirectLinkUrl()}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-1 px-2.5 py-1.5 rounded-lg bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-950 font-bold text-xs shadow-md transition whitespace-nowrap cursor-pointer"
+              title="Claim Warrior Bonus Rewards"
+            >
+              <span>🎁 Bonus</span>
+            </a>
+
             <button
               onClick={() => setIsDeployOpen(true)}
               className="hidden sm:flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-amber-500/10 hover:bg-amber-500/20 text-[#F5C76B] border border-amber-500/30 text-xs font-bold transition whitespace-nowrap"
@@ -191,9 +203,14 @@ export default function App() {
         ) : (
           /* HOMEPAGE VIEW */
           <div className="space-y-16 pb-20">
-            {/* Adsterra Top Leaderboard Banner (728x90) */}
+            {/* Adsterra Top Banners: 728x90 on Desktop, 320x50 on Mobile */}
             <div className="max-w-7xl mx-auto px-4 pt-4">
-              <AdsterraAdBanner slotId="adst_header_728x90" fallbackFormat="728x90" />
+              <div className="hidden sm:block">
+                <AdsterraAdBanner slotId="adst_header_728x90" fallbackFormat="728x90" />
+              </div>
+              <div className="block sm:hidden">
+                <AdsterraAdBanner slotId="adst_mobile_320x50" fallbackFormat="320x50" />
+              </div>
             </div>
 
             {/* HERO SECTION */}
@@ -399,9 +416,10 @@ export default function App() {
               </div>
             </section>
 
-            {/* Adsterra Mid-Page Unit */}
-            <div className="max-w-4xl mx-auto px-4 flex justify-center">
+            {/* Adsterra Mid-Page Units: 300x250 Medium Rectangle & Native Recommendation Banner */}
+            <div className="max-w-4xl mx-auto px-4 flex flex-col items-center gap-4">
               <AdsterraAdBanner slotId="adst_mid_300x250" fallbackFormat="300x250" />
+              <AdsterraAdBanner slotId="adst_native_banner" fallbackFormat="native" />
             </div>
 
             {/* FAQ SECTION */}
@@ -457,9 +475,9 @@ export default function App() {
         )}
       </main>
 
-      {/* 2.5 NON-INTRUSIVE ADSTERRA FOOTER REVENUE BANNER */}
+      {/* 2.5 NON-INTRUSIVE ADSTERRA FOOTER REVENUE BANNER (468x60) */}
       <div className="w-full max-w-7xl mx-auto px-4 py-3 flex justify-center">
-        <AdsterraAdBanner slotId="adst_footer_banner" fallbackFormat="footer" />
+        <AdsterraAdBanner slotId="adst_footer_468x60" fallbackFormat="468x60" />
       </div>
 
       {/* 3. FOOTER */}

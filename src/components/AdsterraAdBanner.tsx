@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import React, { useEffect, useRef } from 'react';
+import React, { useMemo } from 'react';
 import { adsterraService } from '../services/adsterraService';
 
 interface AdsterraAdBannerProps {
   slotId: string;
-  fallbackFormat?: '728x90' | '300x250' | '468x60' | 'footer';
+  fallbackFormat?: '728x90' | '300x250' | '468x60' | '320x50' | '160x300' | 'native';
   className?: string;
 }
 
@@ -17,72 +17,77 @@ export const AdsterraAdBanner: React.FC<AdsterraAdBannerProps> = ({
   fallbackFormat = '728x90',
   className = '',
 }) => {
-  const containerRef = useRef<HTMLDivElement>(null);
   const slot = adsterraService.getSlot(slotId);
 
-  useEffect(() => {
-    if (!containerRef.current || !slot || !slot.enabled || !slot.code) return;
-
-    try {
-      const slotDiv = containerRef.current;
-      slotDiv.innerHTML = ''; // clear previous
-
-      // Parse and execute script tags safely
-      const tempDiv = document.createElement('div');
-      tempDiv.innerHTML = slot.code;
-
-      const scripts = tempDiv.getElementsByTagName('script');
-      for (let i = 0; i < scripts.length; i++) {
-        const s = document.createElement('script');
-        s.type = 'text/javascript';
-        if (scripts[i].src) {
-          s.src = scripts[i].src;
-        } else {
-          s.text = scripts[i].innerHTML;
-        }
-        slotDiv.appendChild(s);
-      }
-    } catch {
-      // safe fallback
-    }
-  }, [slot?.code, slot?.enabled]);
-
-  // If slot doesn't exist or is disabled by admin, return null
-  if (!slot || !slot.enabled) {
+  // If slot doesn't exist or is disabled by admin in CMS, don't render anything
+  if (!slot || !slot.enabled || !slot.code) {
     return null;
   }
 
-  const isFooter = slotId === 'adst_footer_banner' || fallbackFormat === 'footer' || fallbackFormat === '468x60';
-  const isMid = slotId === 'adst_mid_300x250' || fallbackFormat === '300x250';
+  // Determine Dimensions
+  const targetWidth = slot.width || (fallbackFormat === '300x250' ? 300 : fallbackFormat === '468x60' ? 468 : fallbackFormat === '320x50' ? 320 : fallbackFormat === '160x300' ? 160 : 728);
+  const targetHeight = slot.height || (fallbackFormat === '300x250' ? 250 : fallbackFormat === '468x60' ? 60 : fallbackFormat === '320x50' ? 50 : fallbackFormat === '160x300' ? 300 : 90);
 
-  const containerSizing = isFooter
-    ? 'w-full max-w-[468px] min-h-[60px]'
-    : isMid
-    ? 'w-full max-w-[300px] min-h-[250px]'
-    : 'w-full max-w-[728px] min-h-[90px]';
+  // Build sandboxed HTML document so Adsterra scripts and atOptions execute cleanly in isolated context
+  const sandboxedSrcDoc = useMemo(() => {
+    return `<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * { box-sizing: border-box; }
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: transparent;
+      overflow: hidden;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+  </style>
+</head>
+<body>
+  ${slot.code}
+</body>
+</html>`;
+  }, [slot.code]);
 
   return (
     <aside
-      aria-label="Sponsored Adsterra Promotion"
-      className={`mx-auto my-3 flex flex-col items-center justify-center p-2 rounded-xl bg-[#131B30]/70 border border-slate-800/80 shadow-md overflow-hidden ${containerSizing} ${className}`}
+      aria-label="Sponsored Adsterra Advertisement"
+      className={`mx-auto my-3 flex flex-col items-center justify-center p-2 rounded-2xl bg-[#131B30]/80 border border-slate-800/80 shadow-lg overflow-hidden max-w-full ${className}`}
+      style={{ minHeight: `${targetHeight + 28}px` }}
     >
-      <div className="w-full flex items-center justify-between px-2 pb-1 text-[9px] text-slate-500 uppercase tracking-widest font-semibold border-b border-slate-800/40 mb-1">
-        <span className="flex items-center gap-1">
-          <span className="w-1.5 h-1.5 rounded-full bg-amber-400" />
-          <span>Sponsored</span>
+      {/* Sponsored Header Tag */}
+      <div className="w-full flex items-center justify-between px-2 pb-1 text-[9px] text-slate-500 uppercase tracking-widest font-semibold border-b border-slate-800/40 mb-1.5">
+        <span className="flex items-center gap-1.5">
+          <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse" />
+          <span>Sponsored Promotion</span>
         </span>
         <span className="text-purple-400 font-mono text-[9px]">Adsterra</span>
       </div>
 
-      <div
-        ref={containerRef}
-        className="w-full flex items-center justify-center text-center overflow-hidden"
-      >
-        {/* Placeholder shown if no external script executes */}
-        <div className="p-2 text-center text-slate-400 text-xs">
-          <div className="font-semibold text-slate-300 text-[11px]">{slot.title}</div>
-          <div className="text-[10px] text-slate-500 font-mono">Format: {slot.format}</div>
-        </div>
+      {/* Sandboxed Ad Frame */}
+      <div className="w-full flex items-center justify-center overflow-hidden">
+        <iframe
+          title={slot.title}
+          srcDoc={sandboxedSrcDoc}
+          width={targetWidth}
+          height={targetHeight}
+          sandbox="allow-scripts allow-same-origin allow-popups allow-forms"
+          scrolling="no"
+          className="border-0 overflow-hidden max-w-full"
+          style={{
+            width: `${targetWidth}px`,
+            height: `${targetHeight}px`,
+            maxWidth: '100%',
+          }}
+        />
       </div>
     </aside>
   );

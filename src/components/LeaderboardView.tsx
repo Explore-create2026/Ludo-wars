@@ -5,6 +5,7 @@
 
 import React, { useState } from 'react';
 import { statsService } from '../services/statsService';
+import { AdsterraAdBanner } from './AdsterraAdBanner';
 import { Trophy, Medal, Crown, Flame, Search } from 'lucide-react';
 
 export const LeaderboardView: React.FC = () => {
@@ -162,6 +163,11 @@ export const LeaderboardView: React.FC = () => {
             </tbody>
           </table>
         </div>
+      </div>
+
+      {/* Adsterra Leaderboard Banner */}
+      <div className="mt-8 flex justify-center">
+        <AdsterraAdBanner slotId="adst_mid_300x250" fallbackFormat="300x250" />
       </div>
     </div>
   );

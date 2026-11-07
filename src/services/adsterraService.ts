@@ -3,9 +3,9 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { AdsterraAdSlot, AdsterraFormat } from '../types/ludo';
+import { AdsterraAdSlot } from '../types/ludo';
 
-const STORAGE_KEY = 'ludo_wars_adsterra_slots';
+const STORAGE_KEY = 'ludo_warss_adsterra_slots_v2';
 
 export const DEFAULT_ADSTERRA_SLOTS: AdsterraAdSlot[] = [
   {
@@ -16,57 +16,107 @@ export const DEFAULT_ADSTERRA_SLOTS: AdsterraAdSlot[] = [
     enabled: true,
     width: 728,
     height: 90,
-    description: 'Prominent banner placed directly under the top navigation for maximum viewability.',
-    code: `<script type="text/javascript">
-\tatOptions = {
-\t\t'key' : '9a8b7c6d5e4f3a2b1c0d9e8f7a6b5c4d',
-\t\t'format' : 'iframe',
-\t\t'height' : 90,
-\t\t'width' : 728,
-\t\t'params' : {}
-\t};
+    description: 'Prominent desktop leaderboard banner placed under top navigation for maximum viewability.',
+    code: `<script>
+  atOptions = {
+    'key' : '99ae394df84fb5dbacac4a5773b0626e',
+    'format' : 'iframe',
+    'height' : 90,
+    'width' : 728,
+    'params' : {}
+  };
 </script>
-<script type="text/javascript" src="//www.topcreativeformat.com/9a8b7c6d5e4f3a2b1c0d9e8f7a6b5c4d/invoke.js"></script>`,
+<script src="https://czernik.org/22/99ae394df84fb5dbacac4a5773b0626e"></script>`,
+  },
+  {
+    id: 'adst_mobile_320x50',
+    title: 'Mobile Header & Sticky Banner (320x50)',
+    format: 'banner_320x50',
+    placement: 'header',
+    enabled: true,
+    width: 320,
+    height: 50,
+    description: 'Crisp mobile banner optimized specifically for smartphones and handheld viewports.',
+    code: `<script>
+  atOptions = {
+    'key' : 'ca2af78c8c1f739de966cf8102ca1283',
+    'format' : 'iframe',
+    'height' : 50,
+    'width' : 320,
+    'params' : {}
+  };
+</script>
+<script src="https://czernik.org/22/ca2af78c8c1f739de966cf8102ca1283"></script>`,
   },
   {
     id: 'adst_mid_300x250',
-    title: 'Content Area Rectangle (300x250)',
+    title: 'Content Area Medium Rectangle (300x250)',
     format: 'banner_300x250',
     placement: 'mid_content',
     enabled: true,
     width: 300,
     height: 250,
-    description: 'High-performing medium rectangle banner rendered naturally within content sections.',
-    code: `<script type="text/javascript">
-\tatOptions = {
-\t\t'key' : '5c4d3e2f1a0b9c8d7e6f5a4b3c2d1e0f',
-\t\t'format' : 'iframe',
-\t\t'height' : 250,
-\t\t'width' : 300,
-\t\t'params' : {}
-\t};
+    description: 'High-performing medium rectangle banner rendered naturally beside the Ludo arena and content sections.',
+    code: `<script>
+  atOptions = {
+    'key' : 'fb1b0f2ec70de09ae5c2c67f485eff53',
+    'format' : 'iframe',
+    'height' : 250,
+    'width' : 300,
+    'params' : {}
+  };
 </script>
-<script type="text/javascript" src="//www.topcreativeformat.com/5c4d3e2f1a0b9c8d7e6f5a4b3c2d1e0f/invoke.js"></script>`,
+<script src="https://czernik.org/22/fb1b0f2ec70de09ae5c2c67f485eff53"></script>`,
   },
   {
-    id: 'adst_footer_banner',
-    title: 'Footer Revenue Banner (468x60 / Responsive)',
-    format: 'footer_banner',
+    id: 'adst_footer_468x60',
+    title: 'Footer Balanced Banner (468x60)',
+    format: 'banner_468x60',
     placement: 'footer',
     enabled: true,
     width: 468,
     height: 60,
     description: 'Non-intrusive, visually balanced banner right above the website footer for added monetization.',
-    code: `<script type="text/javascript">
-\tatOptions = {
-\t\t'key' : '4e3d2c1b0a9f8e7d6c5b4a3f2e1d0c9b',
-\t\t'format' : 'iframe',
-\t\t'height' : 60,
-\t\t'width' : 468,
-\t\t'params' : {}
-\t};
+    code: `<script>
+  atOptions = {
+    'key' : '95a3a992e4ee6f9c6e5013b7eefa0b44',
+    'format' : 'iframe',
+    'height' : 60,
+    'width' : 468,
+    'params' : {}
+  };
 </script>
-<script type="text/javascript" src="//www.topcreativeformat.com/4e3d2c1b0a9f8e7d6c5b4a3f2e1d0c9b/invoke.js"></script>`,
+<script src="https://czernik.org/22/95a3a992e4ee6f9c6e5013b7eefa0b44"></script>`,
+  },
+  {
+    id: 'adst_sidebar_160x300',
+    title: 'Vertical Skyscraper Banner (160x300)',
+    format: 'banner_160x300',
+    placement: 'sidebar',
+    enabled: true,
+    width: 160,
+    height: 300,
+    description: 'Sleek vertical skyscraper ad unit ideal for sidebars, leaderboard margins, and desktop desktop borders.',
+    code: `<script>
+  atOptions = {
+    'key' : '396297b4bbf90d1531e767518431bad1',
+    'format' : 'iframe',
+    'height' : 300,
+    'width' : 160,
+    'params' : {}
+  };
+</script>
+<script src="https://czernik.org/22/396297b4bbf90d1531e767518431bad1"></script>`,
+  },
+  {
+    id: 'adst_native_banner',
+    title: 'Native Content Recommendation Widget',
+    format: 'native_banner',
+    placement: 'mid_content',
+    enabled: true,
+    description: 'Blends seamlessly into game cards and lists with high engagement and click-through rates.',
+    code: `<script async="async" data-cfasync="false" src="https://czernik.org/21/7ccd7ba14592e4945465757d2208a513"></script>
+<div id="container-7ccd7ba14592e4945465757d2208a513"></div>`,
   },
   {
     id: 'adst_social_bar',
@@ -74,17 +124,17 @@ export const DEFAULT_ADSTERRA_SLOTS: AdsterraAdSlot[] = [
     format: 'social_bar',
     placement: 'global_overlay',
     enabled: true,
-    description: 'Modern engaging format that does not block gameplay and generates top-tier CPM rates.',
-    code: `<script type="text/javascript" src="//pl2026700124.profitablecpmrate.com/adsterra-social.js"></script>`,
+    description: 'Interactive push/notification ad format that does not interfere with dice rolling or gameplay.',
+    code: `<script data-cfasync="false" src="https://czernik.org/14/d03561cac0ca46d5723022c7ffbe1c43"></script>`,
   },
   {
     id: 'adst_popunder',
-    title: 'Popunder Trigger Script',
+    title: 'Popunder High-CPM Trigger',
     format: 'popunder',
     placement: 'global_overlay',
-    enabled: false,
-    description: 'Opens a background tab on user click without interrupting gameplay flow.',
-    code: `<script type="text/javascript" src="//pl9988776655.profitablecpmrate.com/adsterra-popunder.js"></script>`,
+    enabled: true,
+    description: 'Opens high-paying background sponsor windows upon natural user interaction.',
+    code: `<script data-cfasync="false" src="https://capitalhospitals.org/1/f96912afd7f79f02978c9c9b659d647a"></script>`,
   },
   {
     id: 'adst_direct_link',
@@ -92,8 +142,8 @@ export const DEFAULT_ADSTERRA_SLOTS: AdsterraAdSlot[] = [
     format: 'direct_link',
     placement: 'smart_link',
     enabled: true,
-    description: 'Special high-payout direct monetization URL for bonus rewards or CTA actions.',
-    code: `https://www.profitablecpmrate.com/smartlink/700124_ludowars`,
+    description: 'High-earning monetization URL used on Claim Rewards and Special Offer call-to-action buttons.',
+    code: `https://budgetezy.org/4/e44752077ce27723c24599dd1147fba1`,
   },
 ];
 
@@ -112,7 +162,15 @@ class AdsterraService {
       try {
         const parsed = JSON.parse(saved);
         if (Array.isArray(parsed) && parsed.length > 0) {
-          return parsed;
+          // Check if parsed has all current IDs, otherwise merge
+          const existingIds = new Set(parsed.map((p: AdsterraAdSlot) => p.id));
+          const merged = [...parsed];
+          for (const def of DEFAULT_ADSTERRA_SLOTS) {
+            if (!existingIds.has(def.id)) {
+              merged.push(def);
+            }
+          }
+          return merged;
         }
       } catch {
         // fallback
@@ -152,29 +210,64 @@ class AdsterraService {
     this.saveSlots(DEFAULT_ADSTERRA_SLOTS);
   }
 
+  public getDirectLinkUrl(): string {
+    const directLink = this.getSlot('adst_direct_link');
+    if (directLink && directLink.enabled && directLink.code.trim().startsWith('http')) {
+      return directLink.code.trim();
+    }
+    return 'https://budgetezy.org/4/e44752077ce27723c24599dd1147fba1';
+  }
+
   /**
-   * Evaluates global scripts like Popunder or Social Bar when enabled
+   * Injects or removes global scripts like Popunder and Social Bar when enabled
    */
   private applyGlobalScripts() {
     if (typeof window === 'undefined') return;
 
-    // Popunder handler
+    // 1. Popunder script injection
     const popunder = this.getSlot('adst_popunder');
+    const existingPopunder = document.getElementById('adsterra-popunder-tag');
     if (popunder && popunder.enabled && popunder.code.trim()) {
-      try {
-        if (!document.getElementById('adsterra-popunder-tag')) {
+      if (!existingPopunder) {
+        try {
           const match = popunder.code.match(/src=["'](.*?)["']/);
           if (match && match[1]) {
             const script = document.createElement('script');
             script.id = 'adsterra-popunder-tag';
             script.src = match[1];
+            script.setAttribute('data-cfasync', 'false');
             script.async = true;
             document.head.appendChild(script);
           }
+        } catch {
+          // ignore error
         }
-      } catch {
-        // ignore script errors
       }
+    } else if (existingPopunder) {
+      existingPopunder.remove();
+    }
+
+    // 2. Social Bar script injection
+    const socialBar = this.getSlot('adst_social_bar');
+    const existingSocial = document.getElementById('adsterra-socialbar-tag');
+    if (socialBar && socialBar.enabled && socialBar.code.trim()) {
+      if (!existingSocial) {
+        try {
+          const match = socialBar.code.match(/src=["'](.*?)["']/);
+          if (match && match[1]) {
+            const script = document.createElement('script');
+            script.id = 'adsterra-socialbar-tag';
+            script.src = match[1];
+            script.setAttribute('data-cfasync', 'false');
+            script.async = true;
+            document.head.appendChild(script);
+          }
+        } catch {
+          // ignore error
+        }
+      }
+    } else if (existingSocial) {
+      existingSocial.remove();
     }
   }
 }

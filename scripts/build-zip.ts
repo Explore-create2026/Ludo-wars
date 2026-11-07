@@ -88,6 +88,9 @@ if (str_starts_with($uri, 'api/')) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ludo Warss — Premium Gaming Platform</title>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8772765378084223"
+     crossorigin="anonymous"></script>
     <style>
         body { background:#0B1020; color:#F8FAFC; font-family:'Plus Jakarta Sans',sans-serif; margin:0; display:flex; flex-direction:column; min-height:100vh; }
         header { background:#131B30; border-bottom:1px solid #1E294B; padding:18px 30px; display:flex; justify-content:space-between; align-items:center; }
@@ -212,14 +215,17 @@ INSERT INTO \`user_statistics\` (\`user_id\`, \`games_played\`, \`games_won\`, \
 (1, 15, 12, 80.00)
 ON DUPLICATE KEY UPDATE \`games_played\` = 15;
 
--- Adsterra Slots
+-- Adsterra Slots (All 9 Real Formats)
 INSERT INTO \`ad_slots\` (\`slot_name\`, \`title\`, \`is_active\`, \`ad_code\`) VALUES
-('adst_header_728x90', 'Adsterra 728x90 Leaderboard Banner', 1, '<script type="text/javascript">atOptions = {\\'key\\' : \\'9a8b7c6d5e4f3a2b1c0d9e8f7a6b5c4d\\',\\'format\\' : \\'iframe\\',\\'height\\' : 90,\\'width\\' : 728,\\'params\\' : {}};</script><script type="text/javascript" src="//www.topcreativeformat.com/9a8b7c6d5e4f3a2b1c0d9e8f7a6b5c4d/invoke.js"></script>'),
-('adst_mid_300x250', 'Adsterra 300x250 Content Square', 1, '<script type="text/javascript">atOptions = {\\'key\\' : \\'5c4d3e2f1a0b9c8d7e6f5a4b3c2d1e0f\\',\\'format\\' : \\'iframe\\',\\'height\\' : 250,\\'width\\' : 300,\\'params\\' : {}};</script><script type="text/javascript" src="//www.topcreativeformat.com/5c4d3e2f1a0b9c8d7e6f5a4b3c2d1e0f/invoke.js"></script>'),
-('adst_footer_banner', 'Adsterra 468x60 Footer Banner', 1, '<script type="text/javascript">atOptions = {\\'key\\' : \\'4e3d2c1b0a9f8e7d6c5b4a3f2e1d0c9b\\',\\'format\\' : \\'iframe\\',\\'height\\' : 60,\\'width\\' : 468,\\'params\\' : {}};</script><script type="text/javascript" src="//www.topcreativeformat.com/4e3d2c1b0a9f8e7d6c5b4a3f2e1d0c9b/invoke.js"></script>'),
-('adst_social_bar', 'Adsterra Social Bar / Native In-Page Push', 1, '<script type="text/javascript" src="//pl2026700124.profitablecpmrate.com/adsterra-social.js"></script>'),
-('adst_popunder', 'Adsterra Popunder Script', 0, '<script type="text/javascript" src="//pl9988776655.profitablecpmrate.com/adsterra-popunder.js"></script>'),
-('adst_direct_link', 'Adsterra Smart Direct Link', 1, 'https://www.profitablecpmrate.com/smartlink/700124_ludowars');
+('adst_header_728x90', 'Leaderboard Banner 728x90', 1, '<script>atOptions = {\\'key\\' : \\'99ae394df84fb5dbacac4a5773b0626e\\',\\'format\\' : \\'iframe\\',\\'height\\' : 90,\\'width\\' : 728,\\'params\\' : {}};</script><script src=\\"https://czernik.org/22/99ae394df84fb5dbacac4a5773b0626e\\"></script>'),
+('adst_mobile_320x50', 'Mobile Banner 320x50', 1, '<script>atOptions = {\\'key\\' : \\'ca2af78c8c1f739de966cf8102ca1283\\',\\'format\\' : \\'iframe\\',\\'height\\' : 50,\\'width\\' : 320,\\'params\\' : {}};</script><script src=\\"https://czernik.org/22/ca2af78c8c1f739de966cf8102ca1283\\"></script>'),
+('adst_mid_300x250', 'Medium Rectangle 300x250', 1, '<script>atOptions = {\\'key\\' : \\'fb1b0f2ec70de09ae5c2c67f485eff53\\',\\'format\\' : \\'iframe\\',\\'height\\' : 250,\\'width\\' : 300,\\'params\\' : {}};</script><script src=\\"https://czernik.org/22/fb1b0f2ec70de09ae5c2c67f485eff53\\"></script>'),
+('adst_footer_468x60', 'Footer Banner 468x60', 1, '<script>atOptions = {\\'key\\' : \\'95a3a992e4ee6f9c6e5013b7eefa0b44\\',\\'format\\' : \\'iframe\\',\\'height\\' : 60,\\'width\\' : 468,\\'params\\' : {}};</script><script src=\\"https://czernik.org/22/95a3a992e4ee6f9c6e5013b7eefa0b44\\"></script>'),
+('adst_sidebar_160x300', 'Vertical Skyscraper 160x300', 1, '<script>atOptions = {\\'key\\' : \\'396297b4bbf90d1531e767518431bad1\\',\\'format\\' : \\'iframe\\',\\'height\\' : 300,\\'width\\' : 160,\\'params\\' : {}};</script><script src=\\"https://czernik.org/22/396297b4bbf90d1531e767518431bad1\\"></script>'),
+('adst_native_banner', 'Native Recommendation Widget', 1, '<script async=\\"async\\" data-cfasync=\\"false\\" src=\\"https://czernik.org/21/7ccd7ba14592e4945465757d2208a513\\"></script><div id=\\"container-7ccd7ba14592e4945465757d2208a513\\"></div>'),
+('adst_social_bar', 'Adsterra Social Bar', 1, '<script data-cfasync=\\"false\\" src=\\"https://czernik.org/14/d03561cac0ca46d5723022c7ffbe1c43\\"></script>'),
+('adst_popunder', 'Adsterra Popunder Script', 1, '<script data-cfasync=\\"false\\" src=\\"https://capitalhospitals.org/1/f96912afd7f79f02978c9c9b659d647a\\"></script>'),
+('adst_direct_link', 'Adsterra Smart Direct Link', 1, 'https://budgetezy.org/4/e44752077ce27723c24599dd1147fba1');
 `);
 
   // install/index.php
