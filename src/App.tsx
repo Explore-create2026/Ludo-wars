@@ -85,7 +85,7 @@ export default function App() {
             className="text-xl font-black tracking-tight text-white whitespace-nowrap shrink-0 flex items-center gap-2 cursor-pointer"
           >
             <span className="text-2xl">👑</span>
-            <span>LUDO <span className="text-[#F5C76B]">WARS</span></span>
+            <span>LUDO <span className="text-[#F5C76B]">WARSS</span></span>
           </button>
 
           {/* Zone 2: Single-Line Nav Links */}
@@ -354,7 +354,7 @@ export default function App() {
                   <div>
                     <span className="text-xs font-bold uppercase tracking-wider text-amber-400">Rulebook</span>
                     <h2 className="text-2xl md:text-3xl font-extrabold text-white mt-1">
-                      How to Play Ludo Wars
+                      How to Play Ludo Warss
                     </h2>
                   </div>
                   <button
@@ -414,8 +414,8 @@ export default function App() {
               <div className="space-y-3">
                 {[
                   {
-                    q: 'Is Ludo Wars really 100% free with no gambling?',
-                    a: 'Yes. Ludo Wars strictly prohibits betting, wagering, or real-money gaming. It is engineered entirely for casual and competitive entertainment.',
+                    q: 'Is Ludo Warss really 100% free with no gambling?',
+                    a: 'Yes. Ludo Warss strictly prohibits betting, wagering, or real-money gaming. It is engineered entirely for casual and competitive entertainment.',
                   },
                   {
                     q: 'How do I deploy this to my netlify or cPanel shared hosting?',
@@ -423,7 +423,7 @@ export default function App() {
                   },
                   {
                     q: 'How does website monetization work?',
-                    a: 'Ludo Wars integrates official Adsterra ad placements (including 728x90 Header, 300x250 Content, Footer Banner, and Social Bar), which can be managed directly in the Admin Panel without touching source code.',
+                    a: 'Ludo Warss integrates official Adsterra ad placements (including 728x90 Header, 300x250 Content, Footer Banner, and Social Bar), which can be managed directly in the Admin Panel without touching source code.',
                   },
                   {
                     q: 'Can guest players play without registration?',
@@ -468,7 +468,7 @@ export default function App() {
           <div className="flex items-center gap-3">
             <span className="text-2xl">👑</span>
             <div>
-              <span className="font-extrabold text-white text-base">LUDO <span className="text-[#F5C76B]">WARS</span></span>
+              <span className="font-extrabold text-white text-base">LUDO <span className="text-[#F5C76B]">WARSS</span></span>
               <p className="text-xs text-slate-500">Premium Online & Offline Ludo Gaming Platform</p>
             </div>
           </div>
@@ -483,7 +483,7 @@ export default function App() {
           </div>
 
           <div className="text-xs text-slate-600">
-            &copy; {new Date().getFullYear()} Ludo Wars. All rights reserved.
+            &copy; {new Date().getFullYear()} Ludo Warss. All rights reserved.
           </div>
         </div>
       </footer>

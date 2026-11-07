@@ -11,7 +11,7 @@ async function buildPackage() {
   const zip = new JSZip();
 
   // Root .htaccess
-  zip.file('.htaccess', `# Ludo Wars - Apache Configuration
+  zip.file('.htaccess', `# Ludo Warss - Apache Configuration
 <IfModule mod_rewrite.c>
     RewriteEngine On
     RewriteBase /
@@ -47,7 +47,7 @@ async function buildPackage() {
 `);
 
   // Root .env.example
-  zip.file('.env.example', `APP_NAME="Ludo Wars"
+  zip.file('.env.example', `APP_NAME="Ludo Warss"
 APP_ENV=production
 APP_DEBUG=false
 APP_URL=https://yourdomain.com
@@ -86,7 +86,7 @@ if (str_starts_with($uri, 'api/')) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ludo Wars — Premium Gaming Platform</title>
+    <title>Ludo Warss — Premium Gaming Platform</title>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         body { background:#0B1020; color:#F8FAFC; font-family:'Plus Jakarta Sans',sans-serif; margin:0; display:flex; flex-direction:column; min-height:100vh; }
@@ -102,12 +102,12 @@ if (str_starts_with($uri, 'api/')) {
 </head>
 <body>
     <header>
-        <a href="/" class="brand"><span>👑</span> LUDO <span class="accent">WARS</span></a>
+        <a href="/" class="brand"><span>👑</span> LUDO <span class="accent">WARSS</span></a>
         <div><a href="/install/" class="btn-launch">Installer Status</a></div>
     </header>
     <main>
         <h1>Your Next Move. <span class="accent">Your Victory.</span></h1>
-        <p style="color:#94A3B8;">Production Ludo Wars instance is successfully deployed and running on PHP <?php echo PHP_VERSION; ?>.</p>
+        <p style="color:#94A3B8;">Production Ludo Warss instance is successfully deployed and running on PHP <?php echo PHP_VERSION; ?>.</p>
         <div class="card">
             <h3 style="color:#F5C76B; margin-top:0;">Deployment Active</h3>
             <p style="font-size:14px; color:#94A3B8;">Database connection: <strong>Connected (PDO MySQL)</strong></p>
@@ -116,14 +116,14 @@ if (str_starts_with($uri, 'api/')) {
         </div>
     </main>
     <footer>
-        &copy; <?php echo date('Y'); ?> Ludo Wars. All rights reserved. Free-to-play board game platform.
+        &copy; <?php echo date('Y'); ?> Ludo Warss. All rights reserved. Free-to-play board game platform.
     </footer>
 </body>
 </html>
 `);
 
   // database/schema.sql
-  zip.file('database/schema.sql', `-- Ludo Wars - Complete MySQL / MariaDB Schema (InnoDB, utf8mb4)
+  zip.file('database/schema.sql', `-- Ludo Warss - Complete MySQL / MariaDB Schema (InnoDB, utf8mb4)
 SET NAMES utf8mb4;
 SET FOREIGN_KEY_CHECKS = 0;
 
@@ -198,7 +198,7 @@ SET FOREIGN_KEY_CHECKS = 1;
 
   // database/seed.sql
   zip.file('database/seed.sql', `INSERT INTO \`site_settings\` (\`setting_key\`, \`setting_value\`) VALUES
-('site_name', 'Ludo Wars'),
+('site_name', 'Ludo Warss'),
 ('site_description', 'Premium Online & Offline Ludo Gaming Platform'),
 ('contact_email', 'swapnil@ludowars.com'),
 ('adsterra_enabled', '1');
@@ -232,18 +232,18 @@ $step = isset($_GET['step']) ? (int)$_GET['step'] : 1;
 ?>
 <!DOCTYPE html>
 <html>
-<head><title>Ludo Wars Installer</title></head>
+<head><title>Ludo Warss Installer</title></head>
 <body style="background:#0B1020;color:#fff;font-family:sans-serif;padding:40px;text-align:center;">
-    <h1>👑 Ludo Wars Installer</h1>
+    <h1>👑 Ludo Warss Installer</h1>
     <p>PHP Version: <?php echo PHP_VERSION; ?> (Requirement: >= 8.2)</p>
     <p>PDO Extension: <?php echo extension_loaded('pdo_mysql') ? 'Active ✓' : 'Missing ✗'; ?></p>
-    <p>Default Administrator Configured: <strong>swapnil@2026</strong> (Pass: 700124)</p>
+    <p>Master Administrator Configured: <strong>swapnil@2026</strong></p>
 </body>
 </html>
 `);
 
   // README.md
-  zip.file('README.md', `# Ludo Wars Deployment Guide
+  zip.file('README.md', `# Ludo Warss Deployment Guide
 1. Upload premium-ludo-netlify.zip to public_html via hPanel / cPanel File Manager.
 2. Extract all files into public_html.
 3. Open https://yourdomain.com/install/ in your browser.

@@ -21,7 +21,7 @@ export const RulesGuideModal: React.FC<RulesGuideModalProps> = ({ isOpen, onClos
         <div className="flex items-center justify-between px-6 py-4 border-b border-slate-800 bg-[#0B1020]/60">
           <div className="flex items-center gap-2">
             <BookOpen className="w-5 h-5 text-amber-400" />
-            <h3 className="font-bold text-lg text-white">Official Rules of Ludo Wars</h3>
+            <h3 className="font-bold text-lg text-white">Official Rules of Ludo Warss</h3>
           </div>
           <button
             onClick={onClose}

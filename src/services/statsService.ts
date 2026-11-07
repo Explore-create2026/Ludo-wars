@@ -280,7 +280,7 @@ export class StatsService {
     this.saveRegistry(this.userRegistry);
     this.saveUser(newUser);
 
-    return { success: true, message: 'Account created successfully! Welcome to Ludo Wars.', user: newUser };
+    return { success: true, message: 'Account created successfully! Welcome to Ludo Warss.', user: newUser };
   }
 
   public login(usernameOrEmail: string, passwordAttempt: string): { success: boolean; message: string; user?: UserStats } {

@@ -55,8 +55,8 @@ export const AdminPanel: React.FC<AdminPanelProps> = ({ onBackToGame }) => {
   const [saveAlert, setSaveAlert] = useState<string | null>(null);
 
   const [siteSettings, setSiteSettings] = useState({
-    siteName: 'Ludo Wars',
-    seoTitle: 'Ludo Wars — Premium Online & Offline Ludo Gaming Platform',
+    siteName: 'Ludo Warss',
+    seoTitle: 'Ludo Warss — Premium Online & Offline Ludo Gaming Platform',
     seoDescription: 'Play standard tournament Ludo online with friends, local multiplayer pass & play, or against smart AI bots. Free to play.',
     contactEmail: 'swapnil@ludowars.com',
   });
@@ -203,7 +203,7 @@ export const AdminPanel: React.FC<AdminPanelProps> = ({ onBackToGame }) => {
               onClick={onBackToGame}
               className="text-xs text-slate-400 hover:text-white transition"
             >
-              ← Return to Ludo Wars Arena
+              ← Return to Ludo Warss Arena
             </button>
           </div>
         </div>
@@ -221,7 +221,7 @@ export const AdminPanel: React.FC<AdminPanelProps> = ({ onBackToGame }) => {
           </div>
           <div>
             <h1 className="text-lg font-bold text-white flex items-center gap-2">
-              Ludo Wars <span className="text-xs px-2 py-0.5 rounded-full bg-purple-500/20 text-purple-300 font-mono">ADMIN CMS</span>
+              Ludo Warss <span className="text-xs px-2 py-0.5 rounded-full bg-purple-500/20 text-purple-300 font-mono">ADMIN CMS</span>
             </h1>
             <p className="text-xs text-slate-400">Live User Monitoring & Adsterra Monetization Hub</p>
           </div>

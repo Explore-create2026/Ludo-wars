@@ -60,7 +60,7 @@ export const GameArena: React.FC<GameArenaProps> = ({
   const [eligibleTokenIds, setEligibleTokenIds] = useState<number[]>([]);
   const [winner, setWinner] = useState<Player | null>(null);
   const [moveHistory, setMoveHistory] = useState<GameMoveRecord[]>([]);
-  const [logMessage, setLogMessage] = useState<string>('Welcome to Ludo Wars! Roll dice to start.');
+  const [logMessage, setLogMessage] = useState<string>('Welcome to Ludo Warss! Roll dice to start.');
   const [matchStartTime, setMatchStartTime] = useState<number>(Date.now());
 
   const botTimerRef = useRef<NodeJS.Timeout | null>(null);
@@ -347,7 +347,7 @@ export const GameArena: React.FC<GameArenaProps> = ({
     if (allFinished) {
       setWinner(activePlayer);
       soundService.playVictory();
-      setLogMessage(`🏆 GLORY! ${activePlayer.name} has conquered Ludo Wars!`);
+      setLogMessage(`🏆 GLORY! ${activePlayer.name} has conquered Ludo Warss!`);
       const durationSeconds = Math.round((Date.now() - matchStartTime) / 1000);
       statsService.recordGameEnd(
         mode,

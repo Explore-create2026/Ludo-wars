@@ -18,17 +18,17 @@ export const LegalModal: React.FC<LegalModalProps> = ({ type, onClose }) => {
 
   const contentMap: Record<LegalDocType, { title: string; body: React.ReactNode }> = {
     about: {
-      title: 'About Ludo Wars',
+      title: 'About Ludo Warss',
       body: (
         <div className="space-y-4">
           <p>
-            Welcome to <strong>Ludo Wars</strong>, a premium, free-to-play digital board game platform designed for authentic strategy, friendship, and fair competition.
+            Welcome to <strong>Ludo Warss</strong>, a premium, free-to-play digital board game platform designed for authentic strategy, friendship, and fair competition.
           </p>
           <p>
-            Built using modern web technologies and standard international tournament rules, Ludo Wars offers a zero-compromise experience with intelligent AI bots, pass-and-play local multiplayer, and custom room lobbies for remote matches with friends.
+            Built using modern web technologies and standard international tournament rules, Ludo Warss offers a zero-compromise experience with intelligent AI bots, pass-and-play local multiplayer, and custom room lobbies for remote matches with friends.
           </p>
           <div className="p-4 rounded-xl bg-purple-950/30 border border-purple-500/30 text-purple-200 text-xs">
-            <strong>Strict Fair-Play Guarantee:</strong> Ludo Wars contains zero gambling mechanics, zero cash wagering, zero betting, and zero pay-to-win boosters. All dice rolls are mathematically generated and validated.
+            <strong>Strict Fair-Play Guarantee:</strong> Ludo Warss contains zero gambling mechanics, zero cash wagering, zero betting, and zero pay-to-win boosters. All dice rolls are mathematically generated and validated.
           </div>
         </div>
       ),
@@ -75,10 +75,10 @@ export const LegalModal: React.FC<LegalModalProps> = ({ type, onClose }) => {
       body: (
         <div className="space-y-4 text-xs leading-relaxed">
           <p>
-            By accessing or playing Ludo Wars, you agree to abide by these Terms of Service:
+            By accessing or playing Ludo Warss, you agree to abide by these Terms of Service:
           </p>
           <ul className="list-disc pl-5 space-y-1.5">
-            <li><strong>Entertainment Purpose:</strong> Ludo Wars is provided solely for personal entertainment. No real-money gambling or speculative betting is permitted.</li>
+            <li><strong>Entertainment Purpose:</strong> Ludo Warss is provided solely for personal entertainment. No real-money gambling or speculative betting is permitted.</li>
             <li><strong>Fair Competition:</strong> The use of external memory injectors, botting exploits in online rooms, or abuse of the multiplayer synchronization API is strictly prohibited.</li>
             <li><strong>Account Responsibility:</strong> Users are responsible for safeguarding their login credentials and maintaining sportsmanlike conduct in chat and room creation.</li>
           </ul>
@@ -90,7 +90,7 @@ export const LegalModal: React.FC<LegalModalProps> = ({ type, onClose }) => {
       body: (
         <div className="space-y-4 text-xs leading-relaxed">
           <p>
-            Ludo Wars utilizes lightweight cookies and local storage tokens solely to maintain your session state, persist audio volume preferences, and record offline match history.
+            Ludo Warss utilizes lightweight cookies and local storage tokens solely to maintain your session state, persist audio volume preferences, and record offline match history.
           </p>
           <p>
             You can clear local cookies at any time via your browser settings without impacting your ability to play as a guest.
