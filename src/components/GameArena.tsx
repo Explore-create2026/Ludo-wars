@@ -19,6 +19,7 @@ import { statsService } from '../services/statsService';
 import { RoomData } from '../services/roomService';
 import { LudoBoard } from './LudoBoard';
 import { Dice } from './Dice';
+import { GoogleAdSenseBanner } from './GoogleAdSenseBanner';
 import {
   Volume2,
   VolumeX,
@@ -618,6 +619,11 @@ export const GameArena: React.FC<GameArenaProps> = ({
             </div>
           </div>
         </div>
+      </div>
+
+      {/* Google AdSense Auto-Relaxed Recommended Unit */}
+      <div className="w-full">
+        <GoogleAdSenseBanner slot="9192070017" client="ca-pub-8772765378084223" format="autorelaxed" />
       </div>
 
       {/* Victory Modal */}
